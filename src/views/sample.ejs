@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= blog_title %>
+    </title>
+</head>
+
+<body>
+    <h2>
+        <%= blog_title %>
+    </h2>
+    <img src="data:image/jpg;base64, <%= Imagedata %>">
+    <p>
+        <%= author %> |
+            <a href="https://google.com">
+                <%= category %>
+            </a>
+    </p>
+    <%= blog %>
+
+</body>
+
+</html>

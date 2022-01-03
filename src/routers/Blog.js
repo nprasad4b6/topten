@@ -17,11 +17,11 @@ router.post('/blog', (req, res) => {
 router.get('/blog', async (req, res) => {
     try {
         const query = {}
-        if (req.body.id) {
-            query._id = req.body.id
+        if (req.query.id) {
+            query._id = req.query.id
         }
-        if (req.body.parent_subcategory) {
-            query.parent_subcategory = req.body.parent_subcategory
+        if (req.query.parent_subcategory) {
+            query.parent_subcategory = req.query.parent_subcategory
         }
         const result = await Blog.find(query)
         if (result.length) {

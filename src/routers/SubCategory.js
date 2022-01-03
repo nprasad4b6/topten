@@ -17,11 +17,11 @@ router.post('/subcategory', (req, res) => {
 router.get('/subcategory', async (req, res) => {
     try {
         const query = {}
-        if (req.body.id) {
-            query._id = req.body.id
+        if (req.query.id) {
+            query._id = req.query.id
         }
-        if (req.body.parent_category) {
-            query.parent_category = req.body.parent_category
+        if (req.query.parent_category) {
+            query.parent_category = req.query.parent_category
         }
         const result = await SubCategory.find(query)
         if (result.length) {
