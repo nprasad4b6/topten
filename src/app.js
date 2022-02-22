@@ -40,6 +40,9 @@ var upload = multer({ storage: storage });
 
 app.get('/', (req, res) => {
     // res.send("Hello! Continue Your work..")
+    // const result = await BlogData.find()
+    // const result = await BlogData.findById({ _id: id })
+    // res.send(result)
     res.sendFile(path.join(__dirname + `/../home.html`));
 })
 app.get('/getData/:name', (req, res) => {
@@ -92,6 +95,7 @@ app.post('/postData', upload.single('image'), (req, res) => {
     <div id='${req.body.category}_${req.body.slug}'>
     <div>Articles</div>
     <h3>${req.body.blog_title}</h3>
+    <a href="${req.protocol + "://" + req.host}/getData/${req.body.slug}">Click Here to visit page!</a>
     <div>
     ${req.body.blog_title}
     </div>
